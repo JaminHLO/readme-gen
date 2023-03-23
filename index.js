@@ -68,47 +68,47 @@ function writeToFile(answers) {
     }
 
     //create md file
-    const readMeContent = `# <${title}>
+    const readMeContent = `# ${title}
 
-    ${badge}
+${badge}
 
-    ## Description
+## Description
     
-    ${description}
+${description}
     
-    ## Table of Contents (Optional)
-    
-    - [Installation](#installation)
-    - [Usage](#usage)
-    - [License](#license)
-    - [Contributing](#contributing)
-    - [Tests](#tests)
-    - [Questions](#questions)
-    
-    ## Installation
-    
-    ${installation}
+## Table of Contents
 
-    ## Usage
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
 
-    ${usage}
-    
-    ## License
+## Installation
 
-    This Project is covered by the following license: ${license}.
-    
-    ## Contributing
-    
-    ${contributing}
-    
-    ## Tests
-    
-    ${test}
-    
-    ## Questions
+${installation}
 
-    Please find my GitHub repository here: <https://github.com/${github}/>.
-    If you have any questions please contact me at <${email}>.`;
+## Usage
+
+${usage}
+
+## License
+
+This Project is covered by the following license: ${license}.
+
+## Contributing
+
+${contributing}
+
+## Tests
+
+${test}
+
+## Questions
+
+My GitHub username is ${github} and my repository is available here: <https://github.com/${github}/>.
+If you have any questions please contact me at <${email}>.`;
 
     fs.writeFile('README.md', readMeContent, (err) =>
         err ? console.error(err) : console.log('Successfully created README.md file!')
