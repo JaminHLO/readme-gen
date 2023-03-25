@@ -119,7 +119,7 @@ If you have any questions please contact me at <${email}>.`;
 function init() {
     inquirer.prompt(questions)
     .then((answers) => {
-        console.log(answers);
+        // console.log(answers);
         writeToFile(answers);
     });
 }
