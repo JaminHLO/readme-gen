@@ -1,8 +1,8 @@
-// TODO: Include packages needed for this application
+// Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-// TODO: Create an array of questions for user input
+// Create an array of questions for user input
 const questions = [
     {
         type: 'input',
@@ -52,13 +52,14 @@ const questions = [
     }
   ];
 
-// TODO: Create a function to write README file
+// Create a function to write README file
 function writeToFile(answers) {
 
     const {title, description, installation, usage, license, contributing, test, github, email} = answers;
 
     let badge = '';
 
+    // determine which badge to load
     if (license === 'Apache License 2.0'){
         badge = '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)'; 
     } else if (license === 'GNU General Public License v3.0') {
@@ -115,11 +116,10 @@ If you have any questions please contact me at <${email}>.`;
     );
 }
 
-// TODO: Create a function to initialize app
+// Create a function to initialize app
 function init() {
     inquirer.prompt(questions)
     .then((answers) => {
-        // console.log(answers);
         writeToFile(answers);
     });
 }
